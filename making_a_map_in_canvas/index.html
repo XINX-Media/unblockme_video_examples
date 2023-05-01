@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Map</title>
+    <style>
+        /*canvas {
+            width: 200px;
+            height: 200px;
+        }*/
+
+        img {
+            display: none;
+        }
+
+        #hidden_canvas {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <section>
+    <canvas id="canvas" width="400" height="400">Canvas is not supported by your browser</canvas>
+    <canvas id="hidden_canvas">Canvas is not supported by your browser</canvas>
+    <div>
+        <div>
+            Map Width:
+            <input type="number" id="map_width_holder" />
+        </div>
+        <div>
+            Map Height:
+            <input type="number" id="map_height_holder" />
+        </div>
+        <div>
+            Cell Size:
+            <input type="number" id="cell_size_holder" />
+        </div>
+        <button id="generate_map_button">
+            Generate Map
+        </button>
+        <button id="save_map_button">
+            Save Map
+        </button>
+    </div>
+    </section>
+    <img src="./image.png" id="image_holder" />
+    <script src="./random.js"></script>
+    <script src="./collapse.js"></script>
+    <script src="./Tree.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
