@@ -1,0 +1,22 @@
+p {
+    max-width: 600px;
+}
+
+p::first-line {
+    font-weight: bold;
+    color: blue;
+}
+
+a::after {
+    content: "\01F517";
+    font-size: 12px;
+}
+
+p::selection {
+    background-color: darkgreen;
+    color: white;
+}
+
+a[href*="https://"][data-url]::before {
+    content: "(" attr(data-url) ") ";
+}
