@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS widget_db;
+CREATE DATABASE widget_db;
