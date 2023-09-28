@@ -1,0 +1,8 @@
+.name_container {
+    padding: 10px;
+    background-color: #a00;
+    color: white;
+    border: 2px solid black;
+    margin: 10px 0;
+    width: 200px;
+}
