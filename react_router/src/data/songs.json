@@ -1,0 +1,34 @@
+[
+    {
+        "id": 1,
+        "name": "1989",
+        "songs": [
+            {
+                "id": 1,
+                "name": "Shake It Off",
+                "link": "https://youtu.be/nfWlot6h_JM?si=LfO7pKVDpTPgl2av"
+            },
+            {
+                "id": 2,
+                "name": "How You Get the Girl",
+                "link": "https://youtu.be/KjwTwvtwFlE?si=qYd40WnPDhLGUtly"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Reputation",
+        "songs": [
+            {
+                "id": 1,
+                "name": "...Ready for it?",
+                "link": "https://youtu.be/wIft-t-MQuE?si=Qe4xdh8CL8Mq5T1L"
+            },
+            {
+                "id": 2,
+                "name": "End Game",
+                "link": "https://youtu.be/dfnCAmr569k?si=fklA2RDD7FPGMFXc"
+            }
+        ]
+    }
+]
