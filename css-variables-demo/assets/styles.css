@@ -1,0 +1,33 @@
+:root{
+   --myBorder: 5px solid yellow;
+   --primaryBGColor: purple;
+   --secondaryBGColor: green;
+   --primaryText: yellow;
+   --secondaryText: pink; 
+   --mySpacing: 30px
+}
+
+
+body{
+    height: 100vh;
+}
+nav{
+    height: 10%;
+    border: var(--myBorder);
+    background-color: var(--primaryBGColor);
+    color: var(--primaryText);
+}
+main{
+    height: 70%;
+    border: var(--myBorder);
+    background-color: var(--secondaryBGColor);
+    color: var(--secondaryText);
+    margin-top: var(--mySpacing);
+}
+footer{
+    height: 10%;
+    border: var(--myBorder);
+    background-color: var(--primaryBGColor);
+    color: var(--primaryText);
+    margin-top: var(--mySpacing);
+}
