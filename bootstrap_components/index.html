@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Link the Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body class="container pt-5">
+    <!-- Input form for typing in giph search term -->
+    <form id="search-form">
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Enter Giphy Search Term</label>
+          <input type="text" class="form-control" id="search-input">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <!-- Card for displaying our gif and clickable anchor element -->
+    <div class="card" style="width: 36rem;" id="result">
+        <img src="" class="card-img-top" alt="..." id="image">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-primary" id="link">Go somewhere</a>
+        </div>
+    </div>
+    <!-- Dismissable alert -->
+    <div class="alert alert-warning alert-dismissible fade show" role="alert" id="alert">
+        <strong>Holy guacamole!</strong>There were no results found
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <!-- Link custom Javascript -->
+    <script src="./assets/js/script.js"></script>
+    <!-- Link Bootstrap Javascript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>    
+</body>
+</html>
