@@ -1,0 +1,11 @@
+DROP DATABASE IF EXISTS user_db;
+CREATE DATABASE user_db;
+
+USE user_db;
+
+CREATE TABLE users (
+  id INT NOT NULL AUTO_INCREMENT,
+  username VARCHAR(255) NOT NULL,
+  name VARCHAR(255) NOT NULL,
+  PRIMARY KEY (id)
+)
