@@ -1,50 +1,89 @@
 const router = require('express').Router();
-const { User } = require('../../models');
 
-router.post('/login', async (req, res) => {
-  try {
-    // Find the user who matches the posted e-mail address
-    const userData = await User.findOne({ where: { email: req.body.email } });
+const  User  = require('../../models/User');
 
-    if (!userData) {
-      res
-        .status(400)
-        .json({ message: 'Incorrect email or password, please try again' });
-      return;
+// all routes are prepended with /api/users
+
+// Signup
+router.post('/signup', async (req, res) => {
+    try {
+      const dbUserData = await User.create({
+        email: req.body.email,
+        password: req.body.password,
+      });
+  
+      req.session.save(() => {
+        req.session.loggedIn = true;
+        req.session.email = req.body.email
+        res.status(200).json(dbUserData);
+      });
+    } catch (err) {
+      console.log(err);
+      res.status(500).json(err);
     }
-
-    // Verify the posted password with the password store in the database
-    const validPassword = await userData.checkPassword(req.body.password);
-
-    if (!validPassword) {
-      res
-        .status(400)
-        .json({ message: 'Incorrect email or password, please try again' });
-      return;
+  });
+  
+  // Login
+  router.post('/login', async (req, res) => {
+    try {
+      const dbUserData = await User.findOne({
+        where: {
+          email: req.body.email,
+        },
+      });
+  
+      if (!dbUserData) {
+        res
+          .status(400)
+          .json({ message: 'Incorrect email or password. Please try again!' });
+        return;
+      }
+  
+      const validPassword = await dbUserData.checkPassword(req.body.password);
+  
+      if (!validPassword) {
+        res
+          .status(400)
+          .json({ message: 'Incorrect email or password. Please try again!' });
+        return;
+      }
+  
+      // Once the user successfully logs in, set up the sessions variable 'loggedIn'
+      req.session.save(() => {
+        req.session.loggedIn = true;
+        req.session.email = req.body.email
+        res
+          .status(200)
+          .json({ user: dbUserData, message: 'Login Successful!' });
+      });
+    } catch (err) {
+      console.log(err);
+      res.status(500).json(err);
     }
+  });
+  // Logout
+  router.post('/logout', (req, res) => {
+    // If the user is logged in, destroy the session and log them out
+    if (req.session.loggedIn) {
+      req.session.destroy(() => {
+        res.status(204).end();
+      });
+    } else {
+      res.status(404).end();
+    }
+  });
+  // Get all users
+  router.get('/', async (req, res) => {
+    try {
+      const userData = await User.findAll({
+        attributes: { exclude: ['password'] },
+      });
+  
+      res.json(userData);
+    } catch (err) {
+      console.log(err);
+      res.status(500).json(err);
+    }
+  });
 
-    // Create session variables based on the logged in user
-    req.session.save(() => {
-      req.session.user_id = userData.id;
-      req.session.logged_in = true;
-      
-      res.json({ user: userData, message: 'You are now logged in!' });
-    });
-
-  } catch (err) {
-    res.status(400).json(err);
-  }
-});
-
-router.post('/logout', (req, res) => {
-  if (req.session.logged_in) {
-    // Remove the session variables
-    req.session.destroy(() => {
-      res.status(204).end();
-    });
-  } else {
-    res.status(404).end();
-  }
-});
-
-module.exports = router;
+  module.exports = router;

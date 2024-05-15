@@ -1,14 +1,8 @@
 module.exports = {
-  get_emoji: () => {
-    const randomNum = Math.random();
-    let book = "📗";
+    getRandomColor: () => {
+        const colors = ['red', 'green','blue', 'purple', 'yellow', 'orange', ]
 
-    if (randomNum > 0.7) {
-      book = "📘";
-    } else if (randomNum > 0.4) {
-      book = "📙";
+        const randomIndex = Math.floor(Math.random() * colors.length);
+        return colors[randomIndex]
     }
-
-    return `<span for="img" aria-label="book">${book}</span>`;
-  },
-};
+}

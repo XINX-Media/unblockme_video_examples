@@ -1,0 +1,105 @@
+.main-nav {
+    display: flex; /* Use flexbox */
+    justify-content: space-between; /* Move items to the left and right edges */
+    align-items: center; /* Vertically center items */
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.nav-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Styles for navigation items */
+.nav-item {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+/* Styles for navigation links */
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+/* Hover effect for navigation links */
+.nav-link:hover {
+    background-color: #555;
+}
+
+.form-title {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    color: #333;
+}
+
+
+.form {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Styles for form labels */
+.form-label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Styles for form inputs */
+.form-input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Styles for form buttons */
+.form-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Hover effect for buttons */
+.form-button:hover {
+    background-color: #0056b3;
+}
+/* Styles for the error heading */
+.error-heading {
+    font-size: 2em;
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* Styles for the home link */
+.home-link {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Hover effect for home link */
+.home-link:hover {
+    text-decoration: underline;
+}
+.user-card {
+    background-color: #f8f9fa; /* Light gray background */
+    padding: 10px 20px; /* Add some padding */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    margin-bottom: 10px; /* Add margin between cards */
+}

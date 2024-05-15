@@ -1,27 +1,63 @@
-const loginFormHandler = async (event) => {
-  // Stop the browser from submitting the form so we can do so with JavaScript
-  event.preventDefault();
 
-  // Gather the data from the form elements on the page
-  const email = document.querySelector('#email-login').value.trim();
-  const password = document.querySelector('#password-login').value.trim();
+let loginEmail = document.getElementById('loginEmail');
+let loginPassword = document.getElementById('loginPassword');
+let loginForm = document.getElementById('loginForm');
 
-  if (email && password) {
-    // Send the e-mail and password to the server
-    const response = await fetch('/api/users/login', {
-      method: 'POST',
-      body: JSON.stringify({ email, password }),
-      headers: { 'Content-Type': 'application/json' },
-    });
+let signUpEmail = document.getElementById('signUpEmail');
+let signUpPassword = document.getElementById('signUpPassword');
+let signUpForm = document.getElementById('signUpForm');
 
-    if (response.ok) {
-      document.location.replace('/');
-    } else {
-      alert('Failed to log in');
+
+loginForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    let user = {
+        email: loginEmail.value,
+        password: loginPassword.value
     }
-  }
-};
+    fetch('api/users/login', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(user)
+    }).then(res => {
+        if (!res.ok) {
+            alert('Login failed. Please try again.');
+        }else{
+            window.location.href = '/';
+        }
+        return 
+    
+    }).catch(err => {
+        console.log(err);
+    })
+})
 
-document
-  .querySelector('.login-form')
-  .addEventListener('submit', loginFormHandler);
+signUpForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    let user = {
+        email: signUpEmail.value,
+        password: signUpPassword.value
+    }
+    fetch('api/users/signup', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(user)
+    }).then(res => {
+        if (!res.ok) {
+            alert('sign up failed. Please try again.');
+        }else{
+            console.log('redirecting')
+            window.location.href = '/';
+        }
+        return 
+    }).catch(err => {
+        console.log(err);
+    })
+})
+
+
+
+
