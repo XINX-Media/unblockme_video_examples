@@ -1,0 +1,13 @@
+ <h1>Posts by: {{user.email}}</h1>
+  <div class="posts-container">
+    {{#if user.posts}}
+    {{#each user.posts as |post|}}
+        <div class="post-card">
+            <h2>{{post.title}}</h2>
+            <p>{{post.post_content}}</p>
+        </div>
+    {{/each}}
+    {{else}}
+        <p class="no-posts">No posts yet</p>
+    {{/if}}
+  </div>

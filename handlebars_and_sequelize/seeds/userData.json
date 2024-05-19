@@ -1,0 +1,18 @@
+[
+    {
+        "email": "coolperson@coolperson.com",
+        "password": "password1234"
+    },
+    {
+        "email": "codingfan@codingfan.com",
+        "password": "password1234"
+    },
+    {
+        "email": "mrhandlebars@mrhandlebars.com",
+        "password": "password1234"
+    },
+    {
+        "email": "hamburgerhelper@hamburgerhelper.com",
+        "password": "password1234"
+    }
+]

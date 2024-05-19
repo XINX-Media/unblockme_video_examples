@@ -1,0 +1,13 @@
+<h1>Welcome to the Sequelize With Handlebars Demo! </h1>
+<a class="body_link" href="/createPost">Click Here To Create A Post</a>
+<h1>Click On a User to View Their Posts! </h1>
+
+{{#each users as |user|}}
+    {{>userCard}}
+{{/each}}
+
+
+
+
+
+
