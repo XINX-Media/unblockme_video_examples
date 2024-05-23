@@ -1,0 +1,1 @@
+/Users/robbert/.nvm/versions/node/v18.16.0/bin/node /Users/robbert/code/unblockme/unblockme_video_examples/cron/basic.js > /Users/robbert/code/unblockme/unblockme_video_examples/cron/log 2>&1
