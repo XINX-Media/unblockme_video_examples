@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const inputFile = path.join(__dirname, "input.csv");
+const inputFile = path.join(__dirname, "input1.csv");
 
 const contents = fs.readFileSync(inputFile, "utf8");
 const lines = contents.split("\n");

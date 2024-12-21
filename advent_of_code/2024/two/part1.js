@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const filePath = path.join(__dirname, "data.txt");
+const filePath = path.join(__dirname, "data1.txt");
 const contents = fs.readFileSync(filePath, "utf8");
 const lines = contents.split("\n");
 
