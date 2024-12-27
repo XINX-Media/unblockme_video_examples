@@ -1,0 +1,26 @@
+
+a = number of a presses
+b = number of b presses
+t = total tokens
+x = prize X
+y = prize y
+q = ax
+w = bx
+e = ay
+d = by
+ax, ay, bx, by = coords for each press
+
+t = 3a + 1b
+qa + wb = x
+ea + db = y
+
+qa = X - wb
+a = (x-wb) / q
+
+e((x-wb) / q) + db = y
+(e(x - wb)) / q + db = y
+(ex - ewb) / q + db = Y
+ex/q - ewb/q + db = Y
+-ewb/q + db = y - ex/q
+b(-ew/q + d) = y - ex/q
+b = (y - ex/q) / (-ew/q + d)
