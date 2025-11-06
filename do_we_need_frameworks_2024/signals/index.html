@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Components Test</title>
+    <script src="signal.js"></script>
+</head>
+<body>
+    <script src="script.js"></script>
+
+    <script>
+        const cardDatas = [
+            [new Signal('Bob'), 'https://cdn.discordapp.com/avatars/427237425388060672/73a1e60503533723720386bada228e5e.webp?size=240'],
+        ];
+
+        for (const cardData of cardDatas) {
+            const card = createVisualCard(...cardData);
+            document.body.appendChild(card);
+        }
+
+        cardDatas[0][0].change("Bobby");
+    </script>
+</body>
+</html>
